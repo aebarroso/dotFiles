@@ -1,0 +1,98 @@
+#! /bin/sh
+
+# Load keyboard shortcuts
+sxhkd &
+
+# Load Screen Options
+
+~/.scripts/xrandrAuto.sh &
+function DOUBLESCREEN {
+	! xrandr | grep "^VGA1" | grep disconnected
+}
+if DOUBLESCREEN
+then
+	bspc monitor LVDS1 -d     
+	bspc monitor VGA1 -d     
+else
+	bspc monitor LVDS1 -d          
+fi
+
+# Config BSPWM
+
+bspc config border_width         0
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# Desktop 1
+bspc rule -a Urxvt desktop='^1'
+# Desktop 2
+bspc rule -a Firefox desktop='^2'
+# Desktop 3
+bspc rule -a VirtualBox Manager desktop='^3' follow=on focus=on
+bspc rule -a processing-app-Base desktop='^3' follow=on focus=on
+# Desktop 4
+bspc rule -a Wireshark-gtk desktop='^4' follow=on focus=on
+# Desktop 5
+bspc rule -a libreoffice-startcenter desktop='^5' follow=on focus=on
+bspc rule -a libreoffice desktop='^'5 focus=on
+bspc rule -a libreoffice-base desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-calc desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-draw desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-impress desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-math desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-writer desktop='^5' follow=on focus=on
+# Desktop 6
+bspc rule -a Gimp desktop='^6' state=floating follow=on focus=on
+bspc rule -a FreeCad desktop='^6' state=floating follow=on focus=on
+# Desktop 7
+bspc rule -a Evince desktop='^7' follow=on focus=on
+# Desktop 8
+bspc rule -a Skype desktop='^8' follow=on focus=on
+# Desktop 9
+bspc rule -a Thunderbird desktop='^9' follow=on focus=on
+# Desktop 10
+bspc rule -a Galculator desktop='^10'
+bspc rule -a Transmission-gtk desktop='^10'
+bspc rule -a Lxappearance desktop='^10' state=floating 
+
+####################################################
+#######				Load Apps				########
+####################################################
+
+# Compton
+pkill compton
+compton -cbCG --config ~/.config/compton/compton.conf &
+
+# Network Manager Applet
+nm-applet &
+
+# Dropbox 
+~/.dropbox-dist/dropboxd &
+
+# Keybindings
+pkill sxhkd
+sxhkd &
+
+# Wallpaper
+feh --bg-fill ~/Pictures/Wallpapers/wallpaper1.jpg &
+
+# Music
+mpd &
+
+# Terminals
+urxvt &
+urxvt &
+urxvt &
+
+# Dunst
+pkill dunst
+dunst &
+
+# Firefox
+firefox &
+
+# Thunderbird
+thunderbird &
