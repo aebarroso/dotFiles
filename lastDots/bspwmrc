@@ -1,0 +1,40 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x polybar topleft > /dev/null || polybar topleft &
+pgrep -x polybar topright > /dev/null || polybar topright &
+
+xrandr --output eDP1 --primary --mode 1920x1080
+pgrep -x feh > /dev/null ||feh --bg-scale /home/x230/Pictures/Super-1920x1080-Wallpaper.jpg &
+
+bspc monitor -d       
+
+bspc config border_width         0
+bspc config window_gap          9
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# screen 1
+bspc rule -a konsole desktop='^1'
+# screen 2
+bspc rule -a firefox desktop='^2'
+# screen 3
+bspc rule -a code desktop='^3'
+# screen 4
+# screen 5
+bspc rule -a discord desktop='^6'
+bspc rule -a Spotify desktop='^6'
+
+# screen 6
+bspc rule -a thunderbird desktop='^7'
+
+
+konsole &
+konsole &
+konsole &
+firefox &
+discord &
+spotify &
+thunderbird &
