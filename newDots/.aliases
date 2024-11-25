@@ -1,0 +1,15 @@
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -al'
+alias cp='cp -v'
+alias pacup='sudo pacman -Fy && sudo pacman -Syyu && sudo bootctl update' 
+alias pacorphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias mount="mount -v"
+alias umount="umount -v"
+alias wpa_restart='sudo killall wpa_supplicant && sudo systemctl start wpa_supplicant@wlp2s0.service'
+alias wpa_list='sudo wpa_cli -i wlp2s0 list_networks'
+alias wpa_con='sudo wpa_cli -i wlp2s0 select_network' 
+#alias iw_scan='sudo iw dev wlan0 scan | egrep "signal:|SSID:" | sed -e "s/\tsignal: //" -e "s/\tSSID: //" | awk '{ORS = (NR % 2 == 0)? "\n" : " "; print}' | sort'
+alias iw_info='iw wlp2s0 info'
+alias vim='nvim'
+alias sftpcnt='sshfs -o default_permissions pi@176.79.54.170:/home/pi/sftp ~/Sftp -p 12000'
+alias sftpcntlocal='sshfs -o default_permissions pi@192.168.20.20:/home/pi/sftp ~/Sftp'
