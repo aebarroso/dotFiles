@@ -55,6 +55,12 @@ Plug 'ncm2/ncm2'
 
 Plug 'phpactor/ncm2-phpactor'
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'ellisonleao/gruvbox.nvim'
+
+Plug 'sudar/vim-arduino-syntax'
+
 let g:airline_powerline_fonts = 1
 
 let g:nvim_phpcs_config_phpcs_path = 'phpcs'
@@ -184,4 +190,6 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 " let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme nord
+"
+set background=dark " or light if you want light mode
+colorscheme gruvbox

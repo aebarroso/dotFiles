@@ -50,15 +50,13 @@ bspc rule -a jetbrains-studio desktop=^3
 # screen 4
 # screen 4
 # screen 5
-bspc rule -a Spotify desktop=^6
+bspc rule -a processing-app-Base desktop=^5
 # screen 6
+bspc rule -a Spotify desktop=^6
 bspc rule -a buttercup desktop=^6 
 bspc rule -a Buttercup desktop=^6 
-
 # screen 7
 bspc rule -a thunderbird desktop=^7
-
-
 bspc rule -a galculator state=floating
 bspc rule -a Galculator state=floating
 
