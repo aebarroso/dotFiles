@@ -1,0 +1,92 @@
+#! /bin/sh
+
+function DOUBLESCREEN {
+	! xrandr | grep "^DP1" | grep disconnected
+}
+
+if DOUBLESCREEN
+then
+  xrandr --output eDP1 --mode 1920x1080 --output DP1 --mode 1600x900 --right-of eDP1 &
+  
+  bspc monitor eDP1 -d    
+  
+  bspc monitor DP1 -d    
+	
+else
+
+  xrandr --output eDP1 --mode 1920x1080 &
+  
+  bspc monitor eDP1 -d       
+
+fi
+
+
+xsetroot -cursor_name left_ptr &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x polybar topleft > /dev/null || polybar topleft &
+pgrep -x polybar topright > /dev/null || polybar topright &
+pgrep -x feh > /dev/null || feh --bg-scale /home/aeb/Pictures/walpapper02.jpg &
+pgrep -x nm-applet > /dev/null || nm-applet &
+pgrep -x blueman-applet > /dev/null || blueman-applet &
+pgrep -x dunst > /dev/null || dunst &
+pgrep -x wmname > /dev/null || wmname LG3D &
+
+bspc config border_width         0
+bspc config window_gap          5
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# screen 1
+bspc rule -a konsole desktop=^1
+# screen 2
+bspc rule -a brave-browser desktop=^2
+bspc rule -a Brave-browser desktop=^2
+# screen 3
+bspc rule -a code desktop=^3
+bspc rule -a jetbrains-studio desktop=^3
+# screen 4
+# screen 4
+# screen 5
+bspc rule -a processing-app-Base desktop=^5
+
+if DOUBLESCREEN
+then
+# screen 7
+bspc rule -a Spotify desktop=^7
+bspc rule -a buttercup desktop=^7 
+bspc rule -a Buttercup desktop=^7 
+else
+# screen 6
+bspc rule -a Spotify desktop=^6
+bspc rule -a buttercup desktop=^6 
+bspc rule -a Buttercup desktop=^6 
+fi
+
+if DOUBLESCREEN
+then
+  # screen 8
+  bspc rule -a thunderbird desktop=^8
+  bspc rule -a galculator state=floating
+  bspc rule -a Galculator state=floating
+else
+  # screen 7
+  bspc rule -a thunderbird desktop=^7
+  bspc rule -a galculator state=floating
+  bspc rule -a Galculator state=floating
+fi
+
+xsetroot -cursor_name left_ptr  &
+
+unclutter -idle 2 &
+
+# konsole -e tmux &
+konsole &
+konsole &
+konsole &
+brave &
+$HOME/Downloads/squashfs-root/buttercup &
+spotify &
+thunderbird &
