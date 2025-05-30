@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=9;x=957;y=16"/>
+      <property name="length" type="double" value="43.333333333333336"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="icon-size" type="uint" value="18"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="6"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+        <value type="int" value="11"/>
+        <value type="int" value="12"/>
+      </property>
+      <property name="disable-struts" type="bool" value="false"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-2" type="string" value="tasklist">
+      <property name="grouping" type="uint" value="1"/>
+      <property name="show-labels" type="bool" value="false"/>
+      <property name="include-all-monitors" type="bool" value="false"/>
+    </property>
+    <property name="plugin-3" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="miniature-view" type="bool" value="false"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
+    </property>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="system-config-printer"/>
+        <value type="string" value="wi-fi network connection “atlantic safaris” active: atlantic safaris (63%)"/>
+        <value type="string" value="wi-fi network connection “atlantic safaris” active: atlantic safaris (57%)"/>
+        <value type="string" value="wi-fi network connection “atlantic safaris” active: atlantic safaris (56%)"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="wi-fi network connection “atlantic safaris” active: atlantic safaris (58%)"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="blueman"/>
+        <value type="string" value="chrome_status_icon_1"/>
+      </property>
+    </property>
+    <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="show-notifications" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="brave.instance1538;brave.instance1587;brave.instance1602;brave.instance1608;brave.instance164013;brave.instance1667;brave.instance168103;brave.instance1774;brave.instance1779;brave.instance1782;brave.instance1960;brave.instance2032;brave.instance2238;brave.instance2239;brave.instance2279;brave.instance2293;brave.instance2338;brave.instance2396;brave.instance2460;brave.instance2469;brave.instance2493;brave.instance2500;brave.instance2557;brave.instance2561;brave.instance2564;brave.instance2615;brave.instance2618;brave.instance2644;brave.instance2649;brave.instance2654;brave.instance2671;brave.instance2732;brave.instance2737;brave.instance2741;brave.instance2846;brave.instance2853;brave.instance3195;brave.instance3284;brave.instance3613;brave.instance3739;brave.instance383113;brave.instance4578;brave.instance4594;brave.instance81320;chromium.instance1100834;chromium.instance13026;chromium.instance159421;chromium.instance166362;chromium.instance166971;chromium.instance168169;chromium.instance176135;chromium.instance198599;chromium.instance2036;chromium.instance204775;chromium.instance206491;chromium.instance209903;chromium.instance2202;chromium.instance24240;chromium.instance2657;chromium.instance295009;chromium.instance2992;chromium.instance3104;chromium.instance3134;chromium.instance3588;chromium.instance3827;chromium.instance3856;chromium.instance3965;chromium.instance4101;chromium.instance4331;chromium.instance46831;chromium.instance4874;chromium.instance504024;chromium.instance505047;chromium.instance52318;chromium.instance52850;chromium.instance6923;chromium.instance72490;chromium.instance76284;chromium.instance89948;chromium.instance90842;chromium.instance9679;spotify"/>
+    </property>
+    <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-10" type="string" value="notification-plugin"/>
+    <property name="plugin-11" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-12" type="string" value="clock"/>
+  </property>
+</channel>
